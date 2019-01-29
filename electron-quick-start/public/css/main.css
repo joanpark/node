@@ -1,0 +1,252 @@
+/* screen bg */
+
+.screen_bg {
+    position: absolute;
+    width: 1280px;
+    height: 850px;
+    left: 0px;
+    top: 0px;
+
+    background: #ffffff;
+}
+
+
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+button,
+textarea {
+	-webkit-app-region: no-drag;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-user-select: none;
+}
+
+
+/* title bar */
+.title_bar {
+    -webkit-app-region:drag;
+    position: absolute;
+    width: 1280px;
+    height: 32px;
+    left: 0px;
+    top: 0px;
+}
+
+
+/* title bar bg */
+.title_bar_bg {
+    position: absolute;
+    width: 1280px;
+    height: 32px;
+    left: 0px;
+    top: 0px;
+
+    background: #EDEDED;
+}
+
+/* title bar controls */
+.title_bar_controls{
+    position: absolute;
+    width: 113px;
+    height: 32px;
+    left: 1167px;
+    top: 0px;
+
+    mix-blend-mode: normal;
+    opacity: 0.7;
+}
+
+/* bounds */
+.bounds{
+    position: absolute;
+    width: 113px;
+    height: 32px;
+    left: 1167px;
+    top: 0px;
+}
+
+
+/* minimise */
+.minimise{
+position: absolute;
+width: 13.94px;
+height: 2px;
+left: 1185px;
+top: 20px;
+
+background: rgba(77, 66, 199, 0.9);
+}
+
+/* maximise */
+.maximise{
+position: absolute;
+width: 14px;
+height: 12px;
+left: 1217px;
+top: 10px;
+
+background: rgba(77, 66, 199, 0.9);
+}
+
+/* Path */
+.maximise_path1{
+position: absolute;
+width: 10px;
+height: 8px;
+left: 1219px;
+top: 12px;
+
+background: #EEEEEE;
+}
+
+/* Path */
+.maximise_path2{
+position: absolute;
+width: 14px;
+height: 12px;
+left: 1217px;
+top: 10px;
+
+background: #EEEEEE;
+}
+
+/* close */
+.close{
+position: absolute;
+width: 12px;
+height: 12px;
+left: 1250px;
+top: 10px;
+
+background: rgba(77, 66, 199, 0.9);
+}
+
+/* menu */
+.menu{
+position: absolute;
+width: 491px;
+height: 32px;
+left: 5px;
+top: 0px;
+
+background: #EDEDED;
+}
+
+/* Help */
+.menu_help{
+position: absolute;
+width: 54px;
+height: 22px;
+left: 206px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+font-size: 16px;
+
+color: #4D42C7;
+}
+
+
+/* View */
+.menu_view{
+position: absolute;
+width: 54px;
+height: 22px;
+left: 149px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+font-size: 16px;
+
+color: #4D42C7;
+}
+
+
+/* Edit */
+.menu_edit{
+position: absolute;
+width: 54px;
+height: 22px;
+left: 98px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+font-size: 16px;
+
+color: #4D42C7;
+}
+
+
+/* File */
+.menu_file{
+position: absolute;
+width: 54px;
+height: 22px;
+left: 45px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+font-size: 16px;
+
+color: #4D42C7;
+}
+
+
+/* AppLogo */
+.applogo{
+position: absolute;
+width: 31px;
+height: 32px;
+left: 5px;
+top: 0px;
+background-image: url("public/images/AppLogo.png")
+}
+
+
+/* Ellipse */
+.applogo_ellipse{
+position: absolute;
+width: 29px;
+height: 29px;
+left: calc(50% - 29px/2);
+top: calc(50% - 29px/2 - 0.5px);
+
+background: #4D42C7;
+}
+
+/* book_icon */
+.applogo_book_icon{
+position: absolute;
+width: 24px;
+height: 24px;
+left: calc(50% - 24px/2 - 0.5px);
+top: calc(50% - 24px/2);
+}
+
+
+/* rect3027 */
+.applogo_rect{
+position: absolute;
+left: 9.39%;
+right: 9.39%;
+top: 17.8%;
+bottom: 21.71%;
+
+background: #FFFFFF;
+}
