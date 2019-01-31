@@ -75,10 +75,11 @@ h1, h2, h3, h4, h5, h6 {
 position: absolute;
 width: 13.94px;
 height: 2px;
-left: 1185px;
+left: 7px;
 top: 20px;
 
-background: rgba(77, 66, 199, 0.9);
+background: rgba(77, 66, 199, 0.0);
+background-image: url("../images/minimise.png")
 }
 
 /* maximise */
@@ -86,44 +87,29 @@ background: rgba(77, 66, 199, 0.9);
 position: absolute;
 width: 14px;
 height: 12px;
-left: 1217px;
+left: 39px;
 top: 10px;
 
-background: rgba(77, 66, 199, 0.9);
+background: rgba(77, 66, 199, 0.0);
+background-image: url("../images/maximise.png")
 }
 
-/* Path */
-.maximise_path1{
-position: absolute;
-width: 10px;
-height: 8px;
-left: 1219px;
-top: 12px;
-
-background: #EEEEEE;
-}
-
-/* Path */
-.maximise_path2{
-position: absolute;
-width: 14px;
-height: 12px;
-left: 1217px;
-top: 10px;
-
-background: #EEEEEE;
-}
 
 /* close */
 .close{
 position: absolute;
 width: 12px;
 height: 12px;
-left: 1250px;
+left: 72px;
 top: 10px;
 
-background: rgba(77, 66, 199, 0.9);
+background: rgba(77, 66, 199, 0.0);
+background-image: url("../images/close.png")
 }
+
+
+
+
 
 /* menu */
 .menu{
@@ -146,9 +132,9 @@ top: 7px;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: 500;
+font-weight: 1000;
 line-height: normal;
-font-size: 16px;
+font-size: 12px;
 
 color: #4D42C7;
 }
@@ -164,9 +150,9 @@ top: 7px;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: 500;
+font-weight: 1000;
 line-height: normal;
-font-size: 16px;
+font-size: 12px;
 
 color: #4D42C7;
 }
@@ -182,9 +168,9 @@ top: 7px;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: 500;
+font-weight: 1000;
 line-height: normal;
-font-size: 16px;
+font-size: 12px;
 
 color: #4D42C7;
 }
@@ -200,9 +186,9 @@ top: 7px;
 
 font-family: Roboto;
 font-style: normal;
-font-weight: 500;
+font-weight: 1000;
 line-height: normal;
-font-size: 16px;
+font-size: 12px;
 
 color: #4D42C7;
 }
@@ -215,7 +201,7 @@ width: 31px;
 height: 32px;
 left: 5px;
 top: 0px;
-background-image: url("public/images/AppLogo.png")
+background-image: url("../images/AppLogo.png")
 }
 
 
@@ -250,3 +236,46 @@ bottom: 21.71%;
 
 background: #FFFFFF;
 }
+
+/* min_btn */
+.min_btn{
+position: absolute;
+width: 26px;
+height: 31px;
+left: 0px;
+top: 0px;
+
+background: rgba(255, 255, 255, 0.0);
+}
+.min_btn:hover{
+    background: rgba(255, 255, 255, 0.33);
+}
+
+/* max_btn */
+.max_btn{
+    position: absolute;
+    width: 26px;
+    height: 31px;
+    left: 32px;
+    top: 0px;
+    
+    background: rgba(255, 255, 255, 0.0);
+}
+.max_btn:hover{
+    background: rgba(255, 255, 255, 0.33);
+}
+
+/* close_btn */
+.close_btn{
+position: absolute;
+width: 26px;
+height: 31px;
+left: 64px;
+top: 0px;
+
+background: rgba(255, 255, 255, 0.0);
+}
+.close_btn:hover{
+    background: rgba(255, 255, 255, 0.33);
+}
+

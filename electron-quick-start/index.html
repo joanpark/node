@@ -6,6 +6,7 @@
 
     <!-- 커스텀 스타일 불러오기 -->
     <link href="public/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   </head>
 
@@ -27,10 +28,28 @@
           <div class="applogo">
 
           </div>
+
+            <div class="menu_file">File</div>
+            <div class="menu_edit">Edit</div>
+            <div class="menu_view">View</div>
+            <div class="menu_help">Help</div>
+
         </div>
 
+        
         <div class="title_bar_controls">
+          <!---div class="bounds"></div>-->
+          <div class="minimise"></div>
+          <div class="maximise">
+          </div>
+          <div class="close"></div>
+
+          <div class="close_btn" onclick="closeApp();"></div>
+          <div class="max_btn"></div>
+          <div class="min_btn"></div>
         </div>
+
+
       </div>
     </div>
 
@@ -38,6 +57,17 @@
   </div>
 
     <script>
+
+      function closeApp(){
+
+        /*const remote = require('electron').remote
+        $('#close-btn').on('click', e => {
+            remote.getCurrentWindow().close()
+        })*/
+        window.close();
+
+      }
+
       // You can also require other files to run in this process
       require('./renderer.js')
     </script>
