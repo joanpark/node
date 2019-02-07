@@ -28,12 +28,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* title bar */
 .title_bar {
-    -webkit-app-region:drag;
     position: absolute;
     width: 1280px;
     height: 32px;
     left: 0px;
     top: 0px;
+}
+
+.tltlebar_drag{
+    -webkit-app-region:drag;
+position: absolute;
+width: 915px;
+height: 30px;
+left: 258px;
+top: 0px;
 }
 
 
@@ -121,6 +129,14 @@ top: 0px;
 
 background: #EDEDED;
 }
+
+.menu_btn{
+    
+}
+.menu_btn:hover{
+    background: rgba(211, 211, 211, 0.33);
+}
+
 
 /* Help */
 .menu_help{
@@ -248,7 +264,7 @@ top: 0px;
 background: rgba(255, 255, 255, 0.0);
 }
 .min_btn:hover{
-    background: rgba(255, 255, 255, 0.33);
+    background: rgba(211, 211, 211, 0.33);
 }
 
 /* max_btn */
@@ -262,7 +278,7 @@ background: rgba(255, 255, 255, 0.0);
     background: rgba(255, 255, 255, 0.0);
 }
 .max_btn:hover{
-    background: rgba(255, 255, 255, 0.33);
+    background: rgba(211, 211, 211, 0.33);
 }
 
 /* close_btn */
@@ -276,6 +292,15 @@ top: 0px;
 background: rgba(255, 255, 255, 0.0);
 }
 .close_btn:hover{
-    background: rgba(255, 255, 255, 0.33);
+    background: rgba(211, 211, 211, 0.33);
 }
 
+.chart_view{
+position: absolute;
+width: 740px;
+height: 747px;
+left: 527px;
+top: 40px;
+
+background: #FFFFFF;
+}

@@ -10,10 +10,13 @@ function createWindow () {
   mainWindow = new BrowserWindow({
       width: 1280, 
       height: 850,
-      minWidth: 1024, minHeight: 768,
+      //minWidth: 1024, minHeight: 768,
       frame: false
       //titleBarStyle: 'hidden'
     })
+
+    
+  //mainWindow.webContents.openDevTools()
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
@@ -28,6 +31,9 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+  
+
+  
 }
 
 // This method will be called when Electron has finished

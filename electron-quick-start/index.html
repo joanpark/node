@@ -6,11 +6,13 @@
 
     <!-- 커스텀 스타일 불러오기 -->
     <link href="public/css/main.css" rel="stylesheet">
+    <link href="public/css/sidenav.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="http://visjs.org/dist/vis-network.min.css" rel="stylesheet">
 
   </head>
 
-  <body>
+  <body onload="onBodyLoad();">
   <div class="screen_bg">
 
     <!-- All of the Node.js APIs are available in this renderer process. -->
@@ -21,7 +23,7 @@
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
     -->
-    <div class="title_bar">
+    <div class="title_bar">      
       <div class="title_bar_bg">
 
         <div class="menu">
@@ -29,10 +31,10 @@
 
           </div>
 
-            <div class="menu_file">File</div>
-            <div class="menu_edit">Edit</div>
-            <div class="menu_view">View</div>
-            <div class="menu_help">Help</div>
+            <div class="menu_file menu_btn">파일</div>
+            <div class="menu_edit menu_btn">편집</div>
+            <div class="menu_view menu_btn">보기</div>
+            <div class="menu_help menu_btn">도움말</div>
 
         </div>
 
@@ -44,32 +46,146 @@
           </div>
           <div class="close"></div>
 
-          <div class="close_btn" onclick="closeApp();"></div>
+          <div id="close_btn" class="close_btn" onclick="onAppClose();"></div>
           <div class="max_btn"></div>
           <div class="min_btn"></div>
         </div>
 
 
       </div>
+      <div class="tltlebar_drag"></div>
     </div>
 
+    <div class="sidenav">
+      <div class="sidenav_drawerbg">
+      
+      </div>
+      <div class="sidenav_line"></div>
+    </div>
+    <div class="article_list">
+        <div class="article_list_bg">
+
+          </div>
+          <div class="article_list_title">
+              모든글...
+          </div>          
+          <div id="article_list_items" class="article_list_items">
+              
+          </div> 
+    </div>
 
   </div>
+  <div id="mynetwork" class="chart_view">
 
-    <script>
+  </div>
+  <script type="text/template" id="temp_article_item">
 
-      function closeApp(){
+    <%
+      var i = 0; 
+      _.each(items, function(item,key,list){
+    %>
+    <div class="article_item" style="top: <%= i*100  %>px">
+        <div class="article_item_line">
+          
+        </div>
+        <div class="article_item_title">
+            <%= item.body.slice(0, 15) %>
+        </div>
+        <div class="article_item_preview">
+            <%= item.body.slice(0, 100) %>
+        </div>
+    </div>
+    <%
+      i++;
+    });
+    %>
+  </script>
 
-        /*const remote = require('electron').remote
-        $('#close-btn').on('click', e => {
-            remote.getCurrentWindow().close()
-        })*/
-        window.close();
+  <script src='public/data/test.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+  <script src="https://underscorejs.org/underscore.js"></script>
+  <script src="http://visjs.org/dist/vis.js"></script>
+  <script>
+
+      if( require == undefined )
+      {
 
       }
+      else
+      {
+        $ = require("jquery");
 
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
-  </body>
+        // You can also require other files to run in this process
+        require('./renderer.js');
+      }
+
+
+      function onAppClose(){
+        if( require == undefined )
+        {
+          window.close();
+        }
+        else
+        {
+          const remote = require('electron').remote;
+          remote.getCurrentWindow().close();
+        }
+      }
+
+      function onBodyLoad(){
+
+        var tempHtml = $("#temp_article_item").html();
+
+        var template = _.template(tempHtml, {variable: 'items'});
+
+        var tempStr = template(g_gameMainDataList[0].paragraphList);
+        console.log(tempStr);
+
+        $("#article_list_items").html(tempStr);
+
+
+        var data = {
+          nodes: [],
+          edges: []
+        };
+
+
+        var i=0;
+        g_gameMainDataList[0].paragraphList.forEach(element => {
+          
+            var tempObj = {};
+            tempObj.id = i;
+            tempObj.label = element.body.slice(0, 15);
+
+            data.nodes.push(tempObj);
+            i++;
+        });
+
+
+        var options = {
+          edges: {
+            font: {
+              size: 12
+            },
+            widthConstraint: {
+              maximum: 90
+            }
+          },
+          nodes: {
+            shape: 'box',
+            margin: 10,
+            widthConstraint: {
+              maximum: 200
+            }
+          },
+          physics: {
+           enabled: false
+          }
+        };
+        var divChartView = document.getElementById('mynetwork');
+        var visNetwork = new vis.Network(divChartView, data, options);
+
+      }
+  </script>
+</body>
 </html>

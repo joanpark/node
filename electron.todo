@@ -1,5 +1,6 @@
 Projects:
     - 스토리의 구조를 노드 그래프로 구현할 수 있는 좋은 툴 발견 http://visjs.org/examples/network/nodeStyles/widthHeight.html
+    - 온라인 협업 에디터 구현할 수 있는 라이브러리 http://www.mergely.com/
     - photon 이용하여 가장 심플한 형태의 electron 앱 만들기 (기본틀)
     - div 구조들에 figma에서 만든 레이어들 css 및 디자인 이미지 적용하기
     - .exe 로 배포하기
