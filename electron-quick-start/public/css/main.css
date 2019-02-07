@@ -137,6 +137,43 @@ background: #EDEDED;
     background: rgba(211, 211, 211, 0.33);
 }
 
+.btn_file {
+
+position: absolute;
+width: 44px;
+height: 32px;
+left: 36px;
+top: 0px;
+}
+
+.btn_edit{
+position: absolute;
+width: 44px;
+height: 32px;
+left: 89px;
+top: 0px;
+}
+
+.btn_view{
+
+position: absolute;
+width: 44px;
+height: 32px;
+left: 142px;
+top: 0px;
+}
+
+
+.btn_help {
+
+position: absolute;
+width: 51px;
+height: 32px;
+left: 197px;
+top: 0px;
+
+}
+
 
 /* Help */
 .menu_help{
@@ -209,6 +246,32 @@ font-size: 12px;
 color: #4D42C7;
 }
 
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 32px;
+
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0px 0px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+  }
+.dropdown-content a:hover {background-color: #f1f1f1}
 
 /* AppLogo */
 .applogo{

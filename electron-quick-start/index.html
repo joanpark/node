@@ -31,11 +31,56 @@
 
           </div>
 
-            <div class="menu_file menu_btn">파일</div>
-            <div class="menu_edit menu_btn">편집</div>
-            <div class="menu_view menu_btn">보기</div>
-            <div class="menu_help menu_btn">도움말</div>
+            <div class="menu_file">파일</div>
+            <div class="menu_edit">편집</div>
+            <div class="menu_view">보기</div>
+            <div class="menu_help">도움말</div>
 
+            <div class="btn_file menu_btn" onclick="onBtn_Menu();">
+              <div id="dropdown" class="dropdown">
+                <div id="dropdown-content" class="dropdown-content">
+                  <a href="#">새 글</a>
+                  <a href="#">새 챕터</a>
+                  <a href="#">새 스토리</a>
+                  <a href="#">새 프로젝트</a>
+                  <hr>
+                  <a href="#" onclick="onAppClose();">종료</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="btn_edit menu_btn" onclick="onBtn_Menu();">
+              <div id="dropdown" class="dropdown">
+                <div id="dropdown-content" class="dropdown-content">
+                  <a href="#">취소</a>
+                  <a href="#">복원</a>
+                  <hr>
+                  <a href="#">복사</a>
+                  <a href="#">붙여넣기</a>
+                </div>
+              </div>
+            </div>
+            <div class="btn_view menu_btn" onclick="onBtn_Menu();">
+              <div id="dropdown" class="dropdown">
+                <div id="dropdown-content" class="dropdown-content">
+                  <a href="#">도구</a>
+                  <a href="#">차트 보기</a>
+                  <hr>
+                  <a href="#">글 보기</a>
+                  <a href="#">전체보기</a>
+                </div>
+              </div>
+            </div>
+            <div class="btn_help menu_btn" onclick="onBtn_Menu();">
+              <div id="dropdown" class="dropdown">
+                <div id="dropdown-content" class="dropdown-content">
+                  <a href="#">튜토리얼</a>
+                  <hr>
+                  <a href="#" id="information-dialog">정보</a>
+                </div>
+              </div>
+            </div>
         </div>
 
         
@@ -101,10 +146,11 @@
     %>
   </script>
 
+  <script src='public/electron/renderer/dialogs.js'></script>
   <script src='public/data/test.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-  <script src="https://underscorejs.org/underscore.js"></script>
-  <script src="http://visjs.org/dist/vis.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://underscorejs.org/underscore-min.js"></script>
+  <script src="http://visjs.org/dist/vis.min.js"></script>
   <script>
 
       if( require == undefined )
@@ -185,6 +231,37 @@
         var divChartView = document.getElementById('mynetwork');
         var visNetwork = new vis.Network(divChartView, data, options);
 
+      }
+
+      function onBtn_Menu(){
+        
+        var eventTargetDropDown = $('#dropdown', event.target);
+        var eventTargetDropDownContent = $('#dropdown-content', event.target);
+
+        $("[id='dropdown']").each(function(){
+          //console.log($(this).parent().get(0));
+          if( $(this).parent().get(0) != event.target){
+            $(this).css('display', 'inline-block'); 
+          }
+          
+        });
+        $("[id='dropdown-content']").each(function(){
+          if( $(this).parent().parent().get(0) != event.target ){
+            $(this).css('display', 'none');  
+          }          
+        });
+        
+
+
+        var dropdown_display = eventTargetDropDown.css('display');
+        if( dropdown_display == 'inline-block'){
+          eventTargetDropDown.css('display', 'block');
+          eventTargetDropDownContent.css('display', 'block');
+        }
+        else{
+          eventTargetDropDown.css('display', 'inline-block');  
+          eventTargetDropDownContent.css('display', 'none');    
+        }
       }
   </script>
 </body>
