@@ -48,8 +48,6 @@
                 </div>
               </div>
             </div>
-
-
             <div class="btn_edit menu_btn" onclick="onBtn_Menu();">
               <div id="dropdown" class="dropdown">
                 <div id="dropdown-content" class="dropdown-content">
@@ -64,7 +62,7 @@
             <div class="btn_view menu_btn" onclick="onBtn_Menu();">
               <div id="dropdown" class="dropdown">
                 <div id="dropdown-content" class="dropdown-content">
-                  <a href="#">도구</a>
+                  <a href="#" onclick="playStory();">스토리 재생</a>
                   <a href="#">차트 보기</a>
                   <hr>
                   <a href="#">글 보기</a>
@@ -262,6 +260,10 @@
           eventTargetDropDown.css('display', 'inline-block');  
           eventTargetDropDownContent.css('display', 'none');    
         }
+      }
+
+      function playStory(){
+        window.open("public/view/play.html", "", "width=480,height=852");
       }
   </script>
 </body>
