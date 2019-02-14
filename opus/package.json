@@ -1,0 +1,72 @@
+{
+  "name": "opus",
+  "productName": "Opus",
+  "version": "2.1.0",
+  "description": "a minimal note-taking app",
+  "main": "./src/main.js",
+  "scripts": {
+    "postinstall": "electron-rebuild",
+    "start": "electron .",
+    "lint": "eslint --ignore-path .gitignore .",
+    "fix": "eslint --ignore-path .gitignore --fix .",
+    "clean": "rm ~/.opus && rm ~/Library/Application\\ Support/Opus/Settings",
+    "build:mac": "electron-builder -m",
+    "build:win": "electron-builder -w",
+    "build:linux": "electron-builder -l"
+  },
+  "repository": "https://github.com/pacocoursey/Opus",
+  "author": "Paco Coursey <p@paco.im> (paco.im)",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^2.0.3",
+    "electron-better-ipc": "^0.1.1",
+    "electron-disable-file-drop": "^1.0.2",
+    "electron-settings": "^3.2.0",
+    "electron-unhandled": "^1.1.0",
+    "flat": "^4.1.0",
+    "fs-extra": "^6.0.1",
+    "node-abi": "^2.4.4",
+    "os-locale": "^3.0.1",
+    "quill": "^1.3.6",
+    "quill-delta": "^3.6.3",
+    "spellchecker": "^3.5.0",
+    "turndown": "^5.0.1"
+  },
+  "devDependencies": {
+    "electron": "^3.0.2",
+    "electron-builder": "^20.28.4",
+    "electron-rebuild": "^1.8.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "bundle": {
+    "name": "Opus"
+  },
+  "build": {
+    "appId": "com.pacocoursey.opus",
+    "files": [
+      "**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 175,
+          "y": 225
+        },
+        {
+          "x": 365,
+          "y": 225,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
